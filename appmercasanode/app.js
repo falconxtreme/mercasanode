@@ -20,7 +20,7 @@ var BD = new DATABASE();
 
 
 // Configuration
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8080;
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -41,21 +41,7 @@ app.configure('production', function(){
 
 
 // Routes
-//app.get('/', routes.index);
-app.get('/', function (req, res) {
-    console.log("ingresa");
-    //var DATABASE = require('../custom_modules/database');
-    //var BD = new DATABASE();
-    var productosBDSave;
-    BD.getAllProducts(function (productosBD) {
-        productosBDSave = productosBD;
-        console.log("ingresa a bd");
-        res.render('index', { title: 'MERCASA', productos: {} });        
-    });
-    console.log("sale de bd");
-    console.log(productosBDSave);
-    //res.render('index', { title: 'MERCASA', productos: productosBDSave });
-});
+app.get('/', routes.index);
 
 //var appExpress = express();
 //express.use('/', routesIndex);
