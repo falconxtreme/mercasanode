@@ -7,14 +7,14 @@ var queriesLeerTablas = require('./leerTablas');
 var dbConfig = {
    host:'localhost',
    user:'root',
-   password:'root'
+   password:'ROOT'
 };
 
 // run query to db
 var dbConfigWithBD = {
    host:'localhost',
    user:'root',
-   password:'root',
+   password:'ROOT',
    database: 'MercasaTest'
 };
 
@@ -110,6 +110,22 @@ DB.prototype.getAllProducts = function(callback){
       callback(res);
    });
 }
+
+/*
+function getAllProductsSync(){
+   var Query = queriesLeerTablas.SQLREAD_ALLPRODUCTS;
+   runQueryWithoutData(Query,function(res){
+      return (res);
+   });
+}
+*/
+
+DB.prototype.getAllProductsSync = function (){
+   var Query = queriesLeerTablas.SQLREAD_ALLPRODUCTS;
+   runQueryWithoutData(Query,function(res){
+      return (res);
+   });
+}; 
 
 /*
 DB.prototype.saveSingleData = function(data){

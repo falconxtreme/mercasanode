@@ -14,9 +14,9 @@ var DATABASE = require('./custom_modules/database');
 var BD = new DATABASE();
 //BD.createDataBase();
 //BD.createTables();
-/*BD.getAllProducts(function(res){
+BD.getAllProducts(function(res){
    console.log(res);
-});*/
+});
 
 
 // Configuration
